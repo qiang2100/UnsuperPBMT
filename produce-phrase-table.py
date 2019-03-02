@@ -1,7 +1,7 @@
 #import gensim.downloader as api
 
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity as cosine
+
 import scipy.spatial as sp
 
 PHRASE_PATTERN = '{src_phrase} ||| {tgt_phrase} ||| {scores} ||| {alignment} ||| {counts} ||| |||'
@@ -27,48 +27,6 @@ max_vocab = 50000
 #result = model.similar_by_word("cat",20)
 
 #print(result)
-
-
-def get_translations(src_emb, tgt_emb, bs=256):
-    """
-    Get translations.
-    """
-    assert len(tgt_emb) == len(src_emb)
-
-    translations = []
-    for k, i in enumerate(range(0, len(src_emb), bs)):
-        #if k % 50 == 0:
-        print(i, end="... ", flush=True)
-        
-        sis = 1 - sp.distance.cdist( src_emb[i:i + bs], tgt_emb, 'cosine')
-        translations.extend(sis)
-    #translations = torch.cat(translations, 0)
-    assert len(translations) == len(src_emb)
-    print("")
-    return translations
-
-def getWordmap(wordVecPath):
-	words=[]
-	We = []
-	f = open(wordVecPath,'r')
-	lines = f.readlines()
-
-	for (n,line) in enumerate(lines):
-		if (n == 0) :
-			print(line)
-			continue
-		word, vect = line.rstrip().split(' ', 1)
-	                
-		vect = np.fromstring(vect, sep=' ')
-	            
-		We.append(vect)
-
-		words.append(word)
-
-		if(n==max_vocab):
-			break
-	f.close()       
-	return (words, We)
 
 def getWordCount(word_count_path):
 	word2count = {}
