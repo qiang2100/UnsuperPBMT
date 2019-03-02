@@ -23,9 +23,12 @@
 
 4. Count word frequency from Wikipeida. 
    run: python Word_Frequency.py
+   The results are saved into "word_frequency.txt'
+   
 
 ## Learn Phrase Tables
   run: python produce-phrase-table.py
+  The results are saved into "phrase-table.en-sen'
 
 
 
