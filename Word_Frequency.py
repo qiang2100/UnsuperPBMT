@@ -20,7 +20,7 @@ with open("wiki_sent.txt") as file:
 dd = OrderedDict(sorted(wordcount.items(), key=lambda x:x[1]))
 
 
-with open("word_frequency_num.txt",'w') as file:
+with open("word_frequency.txt",'w') as file:
 	for k,v in dd.items():
 		if(v<100):
 			continue;
