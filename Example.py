@@ -1,4 +1,3 @@
-from readability_score.calculators.fleschkincaid import *
 import textstat
 import io
 import numpy as np
