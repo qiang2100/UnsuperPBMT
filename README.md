@@ -29,6 +29,15 @@
 ## Learn Phrase Tables
   run: python produce-phrase-table.py
   The results are saved into "phrase-table.en-sen'
+  
+  
+ ## UnsuperPBMT
+
+Running the PBSMT approach requires to have a working version of [Moses](http://www.statmt.org/moses/?n=Moses.Overview). On some systems Moses is not very straightforward to compile, and it is sometimes much simpler to download [the binaries](http://www.statmt.org/moses/?n=moses.releases) directly.
+
+Once you have a working version of Moses, edit the `MOSES_PATH` variable inside the `UnsupervisedPBMT.sh` script to indicate the location of Moses directory. Then, simply run:
+
+./UnsuperPBMT.sh
 
 
 
