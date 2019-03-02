@@ -25,6 +25,7 @@
    run: python Word_Frequency.py
 
 ## Learn Phrase Tables
+  run: python produce-phrase-table.py
 
 
 
