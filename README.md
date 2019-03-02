@@ -38,7 +38,39 @@ Running the PBSMT approach requires to have a working version of [Moses](http://
 Once you have a working version of Moses, edit the `MOSES_PATH` variable inside the `UnsupervisedPBMT.sh` script to indicate the location of Moses directory. Then, simply run:
 
 ./UnsuperPBMT.sh
+            
+## Evaluation
 
+### Datasets
+The *wikismall* and *wikilarge* datasets can be downloaded [here](https://drive.google.com/open?id=0B6-YKFW-MnbOYWxUMTBEZ1FBam8)
+
+8 references *wikilarge* test set can be downloaded here https://github.com/cocoxu/simplification/tree/master/data/turkcorpus
+
+Copyright of the *newsela* dataset belongs to https://newsela.com. Please contact newsela.com to obtain the dataset https://newsela.com/data/
+
+### Metrics
+
+#### BLEU
+The evaluation pipeline accompanied in our code released produces single reference BLEU scores. 
+
+To be consistant with previous work, you should use 8 references wikilarge test set (availabel at https://github.com/cocoxu/simplification/tree/master/data/turkcorpus)
+
+Therefore, to get the numbers on wikilarge, you should use scripts that support multi-bleu evalution (e.g., [joshua](https://github.com/cocoxu/simplification/#the-text-simplificaiton-system) or mtevalv13a.pl).
+
+Checkout details for BLEU evaluation of wikilarge [here](https://github.com/XingxingZhang/dress/tree/master/experiments/evaluation/BLEU)
+
+#### FRES
+Make sure your FRES is on corpus level.
+
+#### SARI
+The evaluation pipeline accompanied in our code released produces sentence-level SARI scores. You can use this simplification system (available [here](https://github.com/cocoxu/simplification/#the-text-simplificaiton-system)) to produce corpus level SARI scores.
+
+Checkout details for SARI evaluation [here](https://github.com/XingxingZhang/dress/tree/master/experiments/evaluation/SARI)
+
+
+### Results
+For WikiLarge test set
+SARI = 39.08
 
 
 
